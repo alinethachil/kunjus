@@ -547,7 +547,7 @@
   const resetPlaylistBtn = $("#resetPlaylistBtn");
   const ytFrame = $("#ytFrame");
 
-  const DEFAULT_PLAYLIST_ID = "PLFgquLnL59alCl_2TQvOiD5Vgm1hCaGSI"; // You can replace later
+  const DEFAULT_PLAYLIST_ID = "PLoTn6R_eiyqdKUJDcZzNFGvaPPOw3QshW&si=qpOgmABLRrrTmy7-"; // You can replace later
 
   function extractPlaylistId(str) {
     const s = (str || "").trim();
