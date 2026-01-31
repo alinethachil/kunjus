@@ -1,0 +1,2147 @@
+
+
+===== index.html =====
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nandana • Kunjus Corner</title>
+
+  <!-- Premium typography (2 Google Fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+  <meta name="color-scheme" content="light" />
+</head>
+
+<body>
+  <div class="bg-texture" aria-hidden="true"></div>
+
+  <aside class="sidebar" aria-label="Primary">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">✶</div>
+      <div class="brand-text">
+        <div class="brand-title">Kunjus</div>
+        <div class="brand-sub">a tiny premium corner</div>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <button class="nav-item is-active" data-target="home" aria-current="page" title="Home">
+        <span class="nav-ic" aria-hidden="true">⌂</span>
+        <span class="nav-tx">Home</span>
+      </button>
+      <button class="nav-item" data-target="countdown" title="Countdown">
+        <span class="nav-ic" aria-hidden="true">⏳</span>
+        <span class="nav-tx">Countdown</span>
+      </button>
+      <button class="nav-item" data-target="boost" title="Boost">
+        <span class="nav-ic" aria-hidden="true">⚡</span>
+        <span class="nav-tx">Boost</span>
+      </button>
+      <button class="nav-item" data-target="notes" title="Notes">
+        <span class="nav-ic" aria-hidden="true">✎</span>
+        <span class="nav-tx">Notes</span>
+      </button>
+      <button class="nav-item" data-target="story" title="Us">
+        <span class="nav-ic" aria-hidden="true">⟡</span>
+        <span class="nav-tx">Us</span>
+      </button>
+    </nav>
+
+    <div class="sidebar-foot">
+      <div class="pill">
+        <span class="dot"></span>
+        <span id="istClock" class="pill-text">IST • --:--</span>
+      </div>
+      <div class="micro"></div>
+    </div>
+  </aside>
+
+  <main class="app" role="main">
+    <!-- Floating header that “docks” on scroll -->
+    <header class="dock" id="dock">
+      <div class="dock-left">
+        <div class="dock-title" id="dockTitle">
+          <span class="dock-big">NANDANA</span>
+          <span class="dock-small">aka Kunjus</span>
+        </div>
+      </div>
+      <div class="dock-right">
+        <button class="btn btn-ghost" id="openPlaylistBtn" type="button">
+          <span aria-hidden="true">♪</span>
+          YouTube Playlist
+        </button>
+        </div>
+    </header>
+
+    <!-- Sections -->
+    <section id="home" class="section is-active" data-section>
+      <div class="container">
+        <div class="hero">
+          <div class="hero-copy">
+            <h1 class="hero-title">
+              <span class="hero-title-big">NANDANA</span>
+              <span class="hero-title-sub">Kunjus Corner</span>
+            </h1>
+
+            <p class="hero-lede">
+              Hello, you peppy little demon. This is your clean, soft space on the internet.
+              No drama. No romance. Just good vibes, tiny reminders, and a countdown for the inevitable birthday chaos.
+            </p>
+
+            <div class="hero-actions">
+              <button class="btn btn-primary" data-jump="countdown" type="button">Check the Countdown</button>
+              <button class="btn btn-soft" data-jump="notes" type="button">Drop a Note</button>
+            </div>
+
+            <div class="mini-row">
+              <div class="mini-card shimmer">
+                <div class="mini-kicker">Tiny prompt</div>
+                <div class="mini-value" id="promptText">“You’re allowed to take up space.”</div>
+                <div class="mini-actions">
+                  <button class="btn btn-mini" id="newPromptBtn" type="button">New thought</button>
+                  <button class="btn btn-mini btn-mini-ghost" id="copyPromptBtn" type="button">Copy</button>
+                </div>
+              </div>
+
+              <div class="mini-card">
+                <div class="mini-kicker">Today’s tiny mission</div>
+                <div class="mini-value" id="tinyMission">Do one small thing with full focus.</div>
+                <div class="mini-sub">Nothing heroic. Just consistent.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-art">
+            <div class="art-card">
+              <div class="art-top">
+                <div class="badge">Kunjus</div>
+                <div class="badge badge-ghost">MBBS-era legend</div>
+              </div>
+
+              <!-- Replace nandana.png with your own file in the same folder -->
+              <img class="photo" id="nandanaPhoto" src="nandana.png" alt="Nandana" />
+              <div class="photo-fallback" id="photoFallback" aria-hidden="true">
+                <!-- Soft illustration fallback -->
+                <svg viewBox="0 0 420 520" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Soft illustration">
+                  <defs>
+                    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0" stop-color="rgba(189,115,133,0.35)"/>
+                      <stop offset="1" stop-color="rgba(255,255,255,0.0)"/>
+                    </linearGradient>
+                  </defs>
+                  <rect x="18" y="20" width="384" height="480" rx="28" fill="url(#g)"/>
+                  <circle cx="210x" cy="176" r="84" fill="rgba(189,115,133,0.22)"/>
+                  <path d="M114 350c12-72 62-118 128-118s116 46 128 118" fill="rgba(189,115,133,0.20)"/>
+                  <circle cx="210" cy="180" r="70" fill="rgba(255,255,255,0.55)"/>
+                  <path d="M164 176c14-22 36-34 66-34 41 0 70 18 82 54-18-10-42-16-70-16-34 0-58 6-78 16z" fill="rgba(68,33,44,0.28)"/>
+                  <path d="M170 206c14 12 28 18 42 18 14 0 30-6 48-18" stroke="rgba(68,33,44,0.26)" stroke-width="10" stroke-linecap="round"/>
+                  <path d="M114 416h192c18 0 32 14 32 32v10H82v-10c0-18 14-32 32-32z" fill="rgba(255,255,255,0.40)"/>
+                  <path d="M136 412h148" stroke="rgba(189,115,133,0.35)" stroke-width="10" stroke-linecap="round"/>
+                </svg>
+                <div class="fallback-text">
+                  Drop a photo named <b>nandana.png</b> in this folder to personalize it.
+                </div>
+              </div>
+
+              <div class="art-bottom">
+                <div class="stat">
+                  <div class="stat-n" id="daysToBdayMini">--</div>
+                  <div class="stat-l">days to Nov 10</div>
+                </div>
+                <div class="divider"></div>
+                <div class="stat">
+                  <div class="stat-n">100%</div>
+                  <div class="stat-l">peppy energy</div>
+                </div>
+                <div class="divider"></div>
+                <div class="stat">
+                  <div class="stat-n">∞</div>
+                  <div class="stat-l">gym consistency*</div>
+                </div>
+              </div>
+
+              <p class="footnote">*according to her. (I’m just the commentator.)</p>
+            </div>
+          </div>
+        </div>
+
+        </div>
+      </div>
+    </section>
+      </div>
+    </section>
+
+    <section id="countdown" class="section" data-section>
+      <div class="container">
+        <div class="page-head">
+          <h2 class="page-title">Birthday Countdown</h2>
+          <p class="page-sub">Locked to India time (IST), even if you open this from another timezone.</p>
+        </div>
+
+        <div class="card big">
+          <div class="card-head">
+            <h3 class="card-title">Until 10th November</h3>
+            <span class="chip">always running</span>
+          </div>
+          <div class="card-body">
+            <div class="tiles" aria-live="polite">
+              <div class="tile">
+                <div class="tile-num" id="cdDays">--</div>
+                <div class="tile-lab">Days</div>
+              </div>
+              <div class="tile">
+                <div class="tile-num" id="cdHours">--</div>
+                <div class="tile-lab">Hours</div>
+              </div>
+              <div class="tile">
+                <div class="tile-num" id="cdMins">--</div>
+                <div class="tile-lab">Minutes</div>
+              </div>
+              <div class="tile">
+                <div class="tile-num" id="cdSecs">--</div>
+                <div class="tile-lab">Seconds</div>
+              </div>
+            </div>
+
+            <div class="sep"></div>
+
+            <div class="form-grid">
+              <div class="form-title">
+                <h4>Create a new countdown</h4>
+                <p>For later: add a name + date. (Stored locally.)</p>
+              </div>
+
+              <div class="form">
+                <label class="field">
+                  <span class="label">Event name</span>
+                  <input id="newCdName" type="text" placeholder="e.g., Exam Day, Trip, Result…" maxlength="40" />
+                </label>
+
+                <label class="field">
+                  <span class="label">Date (YYYY-MM-DD)</span>
+                  <input id="newCdDate" type="date" />
+                </label>
+
+                <button class="btn btn-primary" id="addCountdownBtn" type="button">Add Countdown</button>
+              </div>
+            </div>
+
+            <div class="list-head">
+              <h4>Saved countdowns</h4>
+              <div class="list-actions">
+                <button class="btn btn-mini btn-mini-ghost" id="clearCountdownsBtn" type="button">Clear saved</button>
+              </div>
+            </div>
+            <div class="countdown-list" id="countdownList"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="boost" class="section" data-section>
+      <div class="container">
+        <div class="page-head">
+          <h2 class="page-title">Boost</h2>
+          <p class="page-sub">One clean motivational line at a time. Not romantic. Not cringe. Just useful.</p>
+        </div>
+
+        <div class="card big">
+          <div class="card-head">
+            <h3 class="card-title">Your line, right now</h3>
+            <span class="chip chip-soft">tap • copy • go</span>
+          </div>
+          <div class="card-body">
+            <div class="quote" id="quoteBox">
+              <div class="quote-mark" aria-hidden="true">“</div>
+              <div class="quote-text" id="quoteText">Loading a good line…</div>
+              <div class="quote-meta" id="quoteMeta">—</div>
+            </div>
+
+            <div class="btn-row">
+              <button class="btn btn-primary" id="newQuoteBtn" type="button">New line</button>
+              <button class="btn btn-soft" id="copyQuoteBtn" type="button">Copy</button>
+            </div>
+
+            <div class="micro-note">
+              If the internet is unavailable, it uses a curated offline set automatically.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="notes" class="section" data-section>
+      <div class="container">
+        <div class="page-head">
+          <h2 class="page-title">Notes</h2>
+          <p class="page-sub">Two-way notes. Add a thought from either side, and optionally reply. Saved on this device.</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-head">
+              <h3 class="card-title">Add a note</h3>
+              <span class="chip">newest first</span>
+            </div>
+            <div class="card-body">
+              <div class="seg" role="tablist" aria-label="Who is writing">
+                <button class="seg-btn is-active" data-author="kunjus" type="button">Kunjus</button>
+                <button class="seg-btn" data-author="me" type="button">Me</button>
+              </div>
+
+              <label class="field">
+                <span class="label" id="primaryLabel">Kunjus note</span>
+                <textarea id="primaryNote" rows="3" placeholder="Type something small & real…"></textarea>
+              </label>
+
+              <label class="field">
+                <span class="label" id="replyLabel">My reply (optional)</span>
+                <textarea id="replyNote" rows="2" placeholder="Add a reply to link it… (optional)"></textarea>
+              </label>
+
+              <div class="btn-row">
+                <button class="btn btn-primary" id="addNoteBtn" type="button">Add note</button>
+                <button class="btn btn-ghost" id="clearNotesBtn" type="button">Clear all</button>
+              </div>
+
+              <div class="micro-note">
+                Tip: Keep it short. Like your attention span after 2 reels.
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-head">
+              <h3 class="card-title">Our notes</h3>
+              <span class="chip chip-soft" id="notesCount">0</span>
+            </div>
+            <div class="card-body">
+              <div class="notes" id="notesList"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="story" class="section" data-section>
+      <div class="container">
+        <div class="page-head">
+          <h2 class="page-title">Us</h2>
+          <p class="page-sub">A small timeline — 10 years of friendship, bets, and “why are you like this?” moments.</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card big">
+            <div class="card-head">
+              <h3 class="card-title">The highlight reel</h3>
+              <span class="chip">since Facebook era</span>
+            </div>
+            <div class="card-body">
+              <div class="timeline">
+                <div class="t-item">
+                  <div class="t-ic" aria-hidden="true">f</div>
+                  <div class="t-body">
+                    <div class="t-title">~10 years ago • Facebook message that somehow worked</div>
+                    <div class="t-text">Random message → normal friendship → years of staying in touch (and chaos management).</div>
+                  </div>
+                </div>
+
+                <div class="t-item">
+                  <div class="t-ic" aria-hidden="true">⚡</div>
+                  <div class="t-body">
+                    <div class="t-title">Peppy little demon, then and now</div>
+                    <div class="t-text">Antics happened. I helped when needed. You claim it was “a lot.” I call it “basic duty.”</div>
+                  </div>
+                </div>
+
+                <div class="t-item">
+                  <div class="t-ic" aria-hidden="true">🩺</div>
+                  <div class="t-body">
+                    <div class="t-title">The MBBS bet</div>
+                    <div class="t-text">
+                      You were dead serious about MBBS.
+                      I placed a bet that you’d make it.
+                      You did.
+                      And you still haven’t “settled” that bet. Noted.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="t-item">
+                  <div class="t-ic" aria-hidden="true">🏋</div>
+                  <div class="t-body">
+                    <div class="t-title">Gym arc (last year)</div>
+                    <div class="t-text">
+                      Joined training, got into shape — proud of you.
+                      I still reserve the right to joke that you have the body and mind of a 4-year-old.
+                      Professional friendship rules.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="t-item">
+                  <div class="t-ic" aria-hidden="true">🗣</div>
+                  <div class="t-body">
+                    <div class="t-title">“She talks about me to everyone”</div>
+                    <div class="t-text">
+                      Still confusing. Still funny.
+                      This site will 100% get shared with someone.
+                      I am already pre-embarrassed.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sep"></div>
+
+              <div class="quote-strip">
+                <div class="qs-logo" aria-hidden="true">✶</div>
+                <div class="qs-text">
+                  <div class="qs-big">“You’re special.”</div>
+                  <div class="qs-small">— you, when you asked why I’d do this. (Answer: because it’s funny + you deserve nice things.)</div>
+                </div>
+              </div>
+
+              <div class="micro-note">
+                Also: copy‑pasting code into Notepad counts as effort. Don’t be disrespectful to my two seconds of work.
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-head">
+              <h3 class="card-title">Mini “logos”</h3>
+              <span class="chip chip-soft">tiny references</span>
+            </div>
+            <div class="card-body">
+              <div class="logos">
+                <div class="logo">
+                  <div class="logo-mark">f</div>
+                  <div class="logo-t">
+                    <div class="logo-h">Facebook era</div>
+                    <div class="logo-s">the accidental beginning</div>
+                  </div>
+                </div>
+                <div class="logo">
+                  <div class="logo-mark">🩺</div>
+                  <div class="logo-t">
+                    <div class="logo-h">MBBS</div>
+                    <div class="logo-s">bet still pending</div>
+                  </div>
+                </div>
+                <div class="logo">
+                  <div class="logo-mark">🏋</div>
+                  <div class="logo-t">
+                    <div class="logo-h">Gym arc</div>
+                    <div class="logo-s">consistency + chaos</div>
+                  </div>
+                </div>
+                <div class="logo">
+                  <div class="logo-mark">⚡</div>
+                  <div class="logo-t">
+                    <div class="logo-h">Antics dept.</div>
+                    <div class="logo-s">peppy demon energy</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sep"></div>
+
+              <div class="callout">
+                <div class="callout-ic" aria-hidden="true">☼</div>
+                <div class="callout-t">
+                  <div class="callout-h">If you’re reading this:</div>
+                  <div class="callout-s">Hydrate. Breathe. Then go do the next small thing.</div>
+                </div>
+              </div>
+
+              <div class="micro-note">
+                
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <footer class="footer">
+          <div>© <span id="yearNow"></span> Kunjus Corner</div>
+          <div class="footer-right">Clean. Soft. Premium. (and slightly annoying)</div>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <!-- Playlist modal -->
+  <div class="modal" id="playlistModal" aria-hidden="true" role="dialog" aria-label="YouTube Playlist">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-panel" role="document">
+      <div class="modal-head">
+        <div>
+          <div class="modal-title">YouTube Playlist</div>
+          <div class="modal-sub">Stays updated via playlist ID.</div>
+        </div>
+        <button class="icon-btn" data-close type="button" aria-label="Close">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="playlist-controls">
+          <label class="field">
+            <span class="label">Playlist ID or URL</span>
+            <input id="playlistInput" type="text" placeholder="e.g., PLxxxx… or full URL" />
+          </label>
+          <button class="btn btn-primary" id="savePlaylistBtn" type="button">Save</button>
+          <button class="btn btn-ghost" id="resetPlaylistBtn" type="button">Reset</button>
+        </div>
+
+        <div class="player">
+          <iframe
+            id="ytFrame"
+            title="YouTube playlist player"
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+            src="">
+          </iframe>
+        </div>
+
+        <div class="micro-note">
+          Tip: If you add/remove songs later, this embed stays up‑to‑date automatically.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+===== style.css =====
+
+/* =========================================================
+   Kunjus Corner — premium soft rose design system
+   Fonts: Fraunces (display), Inter (UI)
+   ========================================================= */
+
+:root{
+  --bg0: #fbf7f8;
+  --bg1: #f7eef1;
+  --card: rgba(255,255,255,0.72);
+  --card2: rgba(255,255,255,0.56);
+  --line: rgba(148, 90, 103, 0.16);
+
+  --text: #231a1e;
+  --muted: rgba(35,26,30,0.68);
+
+  --rose: #bd7385;      /* muted rose */
+  --rose2:#d7a1ae;      /* blush */
+  --ink: #2a1d22;
+
+  --shadow: 0 18px 40px rgba(25, 10, 15, 0.10);
+  --shadow2: 0 10px 22px rgba(25, 10, 15, 0.08);
+
+  --r12: 12px;
+  --r16: 16px;
+  --r20: 20px;
+  --r24: 24px;
+
+  --s1: 6px;
+  --s2: 10px;
+  --s3: 14px;
+  --s4: 18px;
+  --s5: 22px;
+  --s6: 28px;
+  --s7: 36px;
+  --s8: 44px;
+
+  --max: 1100px;
+
+  --ease: cubic-bezier(.2,.8,.2,1);
+}
+
+*{ box-sizing: border-box; }
+html,body{ height: 100%; }
+body{
+  margin:0;
+  color: var(--text);
+  font-family: Poppins, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background:
+    radial-gradient(1000px 700px at 15% 0%, rgba(189,115,133,0.18), transparent 60%),
+    radial-gradient(900px 650px at 90% 20%, rgba(215,161,174,0.20), transparent 55%),
+    linear-gradient(180deg, var(--bg0), var(--bg1));
+  overflow-x: hidden;
+}
+
+.bg-texture{
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(1px 1px at 10% 15%, rgba(35,26,30,0.12) 40%, transparent 60%),
+    radial-gradient(1px 1px at 70% 40%, rgba(35,26,30,0.10) 40%, transparent 60%),
+    radial-gradient(1px 1px at 25% 78%, rgba(35,26,30,0.09) 40%, transparent 60%),
+    radial-gradient(1px 1px at 85% 80%, rgba(35,26,30,0.08) 40%, transparent 60%);
+  opacity: .16;
+  filter: blur(.2px);
+  mix-blend-mode: multiply;
+}
+
+/* Layout */
+.sidebar{
+  position: fixed;
+  top: 0; left: 0;
+  height: 100%;
+  width: 280px;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s6);
+  background: rgba(255,255,255,0.42);
+  border-right: 1px solid var(--line);
+  backdrop-filter: blur(16px);
+}
+
+.app{
+  margin-left: 280px;
+  min-height: 100%;
+}
+
+.container{
+  width: min(var(--max), calc(100% - 44px));
+  margin: 0 auto;
+  padding: 96px 0 72px;
+}
+
+/* Brand */
+.brand{ display:flex; align-items:center; gap: 12px; }
+.brand-mark{
+  width: 56px; height: 56px;
+  border-radius: 18px;
+  display:grid; place-items:center;
+  background: linear-gradient(135deg, rgba(189,115,133,0.30), rgba(255,255,255,0.85));
+  border: 1px solid rgba(189,115,133,0.22);
+  box-shadow: var(--shadow2);
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 20px;
+}
+.brand-title{
+  font-family: "DM Serif Display", serif;
+  font-weight: 400;
+  letter-spacing: .4px;
+  font-size: 20px;
+}
+.brand-sub{
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+/* Nav */
+.nav{
+  display:flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.nav-item{
+  display:flex;
+  align-items:center;
+  gap: 12px;
+  border: 1px solid transparent;
+  background: transparent;
+  border-radius: 14px;
+  padding: 12px 14px;
+  cursor: pointer;
+  color: rgba(35,26,30,0.80);
+  transition: transform .22s var(--ease), background .22s var(--ease), border-color .22s var(--ease);
+  text-align: left;
+}
+.nav-item:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,0.45);
+  border-color: rgba(189,115,133,0.16);
+}
+.nav-item.is-active{
+  background: rgba(189,115,133,0.16);
+  border-color: rgba(189,115,133,0.22);
+  color: var(--ink);
+}
+.nav-ic{
+  width: 34px; height: 34px;
+  display:grid; place-items:center;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.55);
+  border: 1px solid rgba(189,115,133,0.14);
+}
+.nav-tx{ font-weight: 700; letter-spacing: 0.2px; }
+
+/* Sidebar foot */
+.sidebar-foot{ margin-top: auto; display:flex; flex-direction: column; gap: 12px; }
+.pill{
+  display:flex; align-items:center; gap: 10px;
+  padding: 10px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.52);
+  border: 1px solid rgba(189,115,133,0.18);
+}
+.dot{
+  width: 8px; height: 8px;
+  border-radius: 999px;
+  background: var(--rose);
+  box-shadow: 0 0 0 6px rgba(189,115,133,0.14);
+}
+.pill-text{ font-size: 13px; color: rgba(35,26,30,0.78); }
+.micro{ font-size: 12px; color: var(--muted); }
+
+/* Dock header */
+.dock{
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  margin: 18px 22px 0;
+  border-radius: 18px;
+  border: 1px solid rgba(189,115,133,0.18);
+  background: rgba(255,255,255,0.52);
+  backdrop-filter: blur(16px);
+  box-shadow: var(--shadow2);
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  transition: transform .28s var(--ease), box-shadow .28s var(--ease);
+}
+.dock:hover{ box-shadow: var(--shadow); }
+
+.dock-title{
+  display:flex; align-items: baseline; gap: 12px;
+}
+.dock-big{
+  font-family: Outfit, 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  font-size: 24px;
+}
+.dock-small{
+  font-size: 13px;
+  color: var(--muted);
+}
+
+body.is-docked .dock-big{
+  font-size: 18px;
+  letter-spacing: 0.2px;
+  transition: font-size .28s var(--ease), letter-spacing .28s var(--ease);
+}
+body.is-docked .dock{
+  transform: translateY(0);
+}
+
+/* Sections + transitions */
+.section{ display:none; opacity: 0; transform: translateY(10px); }
+.section.is-active{
+  display:block;
+  animation: sectionIn .36s var(--ease) forwards;
+}
+@keyframes sectionIn{
+  to{ opacity: 1; transform: translateY(0); }
+}
+
+/* Hero */
+.hero{
+  display:grid;
+  grid-template-columns: 1.25fr 0.95fr;
+  gap: var(--s8);
+  align-items: start;
+}
+.eyebrow{
+  margin: 0 0 12px;
+  color: var(--muted);
+}
+.hero-title{
+  margin: 0;
+  line-height: 1.02;
+}
+.hero-title-big{
+  display:block;
+  font-family: "DM Serif Display", serif;
+  font-weight: 400;
+  font-size: 58px;
+  letter-spacing: 0.5px;
+  color: var(--ink);
+}
+.hero-title-sub{
+  display:block;
+  margin-top: 8px;
+  font-size: 14px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(35,26,30,0.60);
+}
+.hero-lede{
+  margin: 16px 0 18px;
+  color: rgba(35,26,30,0.78);
+  max-width: 62ch;
+}
+.hero-actions{ display:flex; gap: 12px; flex-wrap: wrap; margin-bottom: 18px; }
+
+.mini-row{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.mini-card{
+  border-radius: 18px;
+  border: 1px solid rgba(189,115,133,0.16);
+  background: rgba(255,255,255,0.62);
+  box-shadow: var(--shadow2);
+  padding: 14px 14px 12px;
+  transition: transform .22s var(--ease), box-shadow .22s var(--ease);
+}
+.mini-card:hover{ transform: translateY(-2px); box-shadow: var(--shadow); }
+.mini-kicker{
+  font-size: 12px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: rgba(35,26,30,0.56);
+  margin-bottom: 10px;
+}
+.mini-value{
+  font-weight: 600;
+  color: rgba(35,26,30,0.84);
+  min-height: 44px;
+}
+.mini-actions{ display:flex; gap: 10px; margin-top: 10px; }
+.mini-sub{ margin-top: 8px; font-size: 12px; color: var(--muted); }
+
+.shimmer{
+  position: relative;
+  overflow: hidden;
+}
+.shimmer::after{
+  content:"";
+  position:absolute;
+  inset:-40% -60%;
+  background: linear-gradient(115deg, transparent 35%, rgba(255,255,255,0.32) 50%, transparent 65%);
+  transform: translateX(-40%);
+  animation: shimmer 4.8s var(--ease) infinite;
+}
+@keyframes shimmer{
+  0%{ transform: translateX(-55%); }
+  45%{ transform: translateX(40%); }
+  100%{ transform: translateX(55%); }
+}
+
+/* Art card */
+.art-card{
+  border-radius: 26px;
+  border: 1px solid rgba(189,115,133,0.18);
+  background: rgba(255,255,255,0.62);
+  box-shadow: var(--shadow);
+  padding: 14px;
+  position: relative;
+}
+.art-top{
+  display:flex; gap: 10px; align-items:center;
+  margin-bottom: 12px;
+}
+.badge{
+  padding: 8px 10px;
+  border-radius: 999px;
+  background: rgba(189,115,133,0.16);
+  border: 1px solid rgba(189,115,133,0.20);
+  font-weight: 600;
+  font-size: 12px;
+}
+.badge-ghost{
+  background: rgba(255,255,255,0.52);
+}
+.photo{
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  border-radius: 22px;
+  border: 1px solid rgba(189,115,133,0.14);
+  background: rgba(247,238,241,0.8);
+  display:block;
+}
+.photo-fallback{ display:none; }
+.photo-fallback.is-on{
+  display:block;
+  border-radius: 22px;
+  border: 1px dashed rgba(189,115,133,0.28);
+  background: rgba(247,238,241,0.72);
+  padding: 14px;
+}
+.photo-fallback svg{
+  width: 100%;
+  height: 320px;
+  border-radius: 18px;
+}
+.fallback-text{
+  margin-top: 10px;
+  font-size: 12px;
+  color: rgba(35,26,30,0.70);
+}
+
+.art-bottom{
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 12px;
+  padding: 12px 10px;
+  border-radius: 18px;
+  border: 1px solid rgba(189,115,133,0.14);
+  background: rgba(255,255,255,0.50);
+}
+.stat{ text-align:center; min-width: 88px; }
+.stat-n{
+  font-family: DM Serif Display, serif;
+  font-weight: 650;
+  font-size: 22px;
+  color: var(--ink);
+}
+.stat-l{
+  font-size: 11px;
+  color: rgba(35,26,30,0.64);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.divider{ width: 1px; height: 28px; background: rgba(189,115,133,0.18); }
+.footnote{ margin: 10px 4px 0; font-size: 12px; color: var(--muted); }
+
+/* Cards */
+.grid-2{
+  margin-top: 18px;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.card{
+  border-radius: 22px;
+  border: 1px solid rgba(189,115,133,0.16);
+  background: var(--card);
+  box-shadow: var(--shadow2);
+  padding: 16px;
+}
+.card.big{ padding: 18px; }
+.card-head{
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.card-title{
+  margin: 0;
+  font-family: DM Serif Display, serif;
+  font-weight: 650;
+  letter-spacing: .2px;
+}
+.chip{
+  font-size: 12px;
+  color: rgba(35,26,30,0.66);
+  padding: 8px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.48);
+  border: 1px solid rgba(189,115,133,0.14);
+}
+.chip-soft{
+  background: rgba(189,115,133,0.12);
+  border-color: rgba(189,115,133,0.18);
+}
+.card-body{ color: rgba(35,26,30,0.78); }
+
+/* Quick */
+.quick{ display:grid; gap: 10px; }
+.quick-item{
+  display:flex; align-items:center; gap: 12px;
+  width: 100%;
+  padding: 12px 12px;
+  border-radius: 18px;
+  border: 1px solid rgba(189,115,133,0.16);
+  background: rgba(255,255,255,0.55);
+  cursor: pointer;
+  text-align: left;
+  transition: transform .22s var(--ease), box-shadow .22s var(--ease);
+}
+.quick-item:hover{ transform: translateY(-2px); box-shadow: var(--shadow2); }
+.quick-ic{
+  width: 40px; height: 40px;
+  display:grid; place-items:center;
+  border-radius: 14px;
+  background: rgba(189,115,133,0.14);
+  border: 1px solid rgba(189,115,133,0.16);
+}
+.quick-h{ font-weight: 700; color: rgba(35,26,30,0.86); }
+.quick-s{ display:block; font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+/* Rules list */
+.rules{ list-style:none; padding: 0; margin: 0; display:grid; gap: 10px; }
+.tick{
+  display:inline-grid; place-items:center;
+  width: 22px; height: 22px;
+  border-radius: 999px;
+  background: rgba(189,115,133,0.14);
+  border: 1px solid rgba(189,115,133,0.16);
+  margin-right: 10px;
+  color: var(--ink);
+  font-weight: 700;
+}
+.hint{
+  margin-top: 14px;
+  padding: 12px 12px;
+  border-radius: 18px;
+  background: rgba(189,115,133,0.12);
+  border: 1px solid rgba(189,115,133,0.16);
+  color: rgba(35,26,30,0.76);
+  display:flex; gap: 10px; align-items:flex-start;
+}
+.hint-ic{ margin-top: 2px; }
+
+/* Page head */
+.page-head{ margin-bottom: 14px; }
+.page-title{
+  margin: 0;
+  font-family: Outfit, 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 34px;
+  letter-spacing: 0.2px;
+}
+.page-sub{ margin: 6px 0 0; color: var(--muted); max-width: 70ch; }
+
+/* Countdown tiles */
+.tiles{
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+.tile{
+  border-radius: 18px;
+  border: 1px solid rgba(189,115,133,0.16);
+  background: rgba(255,255,255,0.58);
+  padding: 14px 12px 12px;
+  text-align:center;
+  box-shadow: var(--shadow2);
+}
+.tile-num{
+  font-family: DM Serif Display, serif;
+  font-weight: 650;
+  font-size: 34px;
+  color: var(--ink);
+  letter-spacing: .4px;
+}
+.tile-lab{
+  margin-top: 6px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .18em;
+  color: rgba(35,26,30,0.64);
+}
+.sep{
+  height: 1px;
+  background: rgba(189,115,133,0.16);
+  margin: 16px 0;
+}
+
+/* Forms */
+.form-grid{
+  display:grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 16px;
+  align-items: start;
+}
+.form-title h4{ margin: 0 0 6px; font-size: 16px; color: rgba(35,26,30,0.86); }
+.form-title p{ margin: 0; color: var(--muted); font-size: 13px; }
+.form{ display:grid; gap: 10px; }
+.field{ display:grid; gap: 6px; }
+.label{ font-size: 12px; color: rgba(35,26,30,0.66); letter-spacing: .06em; text-transform: uppercase; }
+input, textarea{
+  width: 100%;
+  padding: 12px 12px;
+  border-radius: 16px;
+  border: 1px solid rgba(189,115,133,0.18);
+  background: rgba(255,255,255,0.65);
+  outline: none;
+  font: inherit;
+  color: rgba(35,26,30,0.86);
+  transition: box-shadow .22s var(--ease), transform .22s var(--ease), border-color .22s var(--ease);
+}
+textarea{ resize: vertical; min-height: 84px; }
+input:focus, textarea:focus{
+  box-shadow: 0 0 0 6px rgba(189,115,133,0.14);
+  border-color: rgba(189,115,133,0.34);
+}
+
+/* Buttons */
+.btn{
+  border: 1px solid rgba(189,115,133,0.18);
+  background: rgba(255,255,255,0.60);
+  color: rgba(35,26,30,0.84);
+  padding: 11px 14px;
+  border-radius: 16px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform .22s var(--ease), box-shadow .22s var(--ease), background .22s var(--ease);
+}
+.btn:hover{ transform: translateY(-1px); box-shadow: var(--shadow2); }
+.btn:active{ transform: translateY(0); box-shadow: none; }
+.btn-primary{
+  background: linear-gradient(135deg, rgba(189,115,133,0.95), rgba(215,161,174,0.90));
+  border-color: rgba(189,115,133,0.24);
+  color: white;
+}
+.btn-soft{
+  background: rgba(189,115,133,0.14);
+  border-color: rgba(189,115,133,0.18);
+  color: rgba(35,26,30,0.86);
+}
+.btn-ghost{
+  background: rgba(255,255,255,0.46);
+}
+.btn-mini{
+  padding: 8px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+.btn-mini-ghost{
+  background: rgba(255,255,255,0.46);
+}
+.btn-row{ display:flex; gap: 12px; flex-wrap: wrap; margin-top: 12px; }
+.icon-btn{
+  width: 40px; height: 40px;
+  border-radius: 14px;
+  border: 1px solid rgba(189,115,133,0.18);
+  background: rgba(255,255,255,0.55);
+  cursor:pointer;
+  transition: transform .22s var(--ease);
+}
+.icon-btn:hover{ transform: translateY(-1px); }
+
+/* Lists */
+.list-head{
+  display:flex; align-items:center; justify-content: space-between;
+  gap: 12px; margin-top: 10px;
+}
+.countdown-list{ display:grid; gap: 10px; margin-top: 10px; }
+.cd-item{
+  display:flex; justify-content: space-between; align-items: center;
+  gap: 12px;
+  padding: 12px 12px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.55);
+  border: 1px solid rgba(189,115,133,0.16);
+}
+.cd-name{ font-weight: 700; color: rgba(35,26,30,0.86); }
+.cd-sub{ font-size: 12px; color: var(--muted); margin-top: 2px; }
+.cd-right{ text-align:right; }
+.cd-time{
+  font-family: DM Serif Display, serif;
+  font-weight: 650;
+  color: var(--ink);
+}
+.cd-del{
+  margin-left: 10px;
+}
+
+/* Quotes */
+.quote{
+  position: relative;
+  padding: 18px 18px 16px;
+  border-radius: 22px;
+  background: rgba(255,255,255,0.58);
+  border: 1px solid rgba(189,115,133,0.16);
+  box-shadow: var(--shadow2);
+  overflow: hidden;
+}
+.quote-mark{
+  position:absolute;
+  top: 8px; left: 12px;
+  font-family: DM Serif Display, serif;
+  font-size: 56px;
+  color: rgba(189,115,133,0.18);
+  line-height: 1;
+}
+.quote-text{
+  font-size: 20px;
+  font-weight: 650;
+  color: rgba(35,26,30,0.86);
+  padding-left: 18px;
+  transition: opacity .22s var(--ease), transform .22s var(--ease);
+}
+.quote-meta{
+  margin-top: 10px;
+  color: rgba(35,26,30,0.60);
+  font-size: 13px;
+  padding-left: 18px;
+  transition: opacity .22s var(--ease), transform .22s var(--ease);
+}
+.quote.is-changing .quote-text,
+.quote.is-changing .quote-meta{
+  opacity: 0;
+  transform: translateY(6px);
+}
+.micro-note{ margin-top: 10px; font-size: 12px; color: var(--muted); }
+
+/* Notes */
+.seg{
+  display:inline-flex;
+  border-radius: 14px;
+  padding: 4px;
+  border: 1px solid rgba(189,115,133,0.16);
+  background: rgba(255,255,255,0.54);
+  gap: 4px;
+  margin-bottom: 12px;
+}
+.seg-btn{
+  border: none;
+  background: transparent;
+  padding: 9px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 700;
+  color: rgba(35,26,30,0.70);
+}
+.seg-btn.is-active{
+  background: rgba(189,115,133,0.18);
+  color: rgba(35,26,30,0.88);
+}
+.notes{ display:grid; gap: 12px; }
+.note{
+  padding: 12px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.58);
+  border: 1px solid rgba(189,115,133,0.16);
+}
+.note-top{
+  display:flex; justify-content: space-between; align-items:center; gap: 12px;
+  margin-bottom: 10px;
+}
+.note-time{ font-size: 12px; color: var(--muted); }
+.note-del{ font-size: 12px; padding: 8px 10px; border-radius: 12px; }
+.pair{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.bubble{
+  border-radius: 18px;
+  padding: 10px 10px;
+  border: 1px solid rgba(189,115,133,0.14);
+  background: rgba(247,238,241,0.72);
+}
+.bubble.me{
+  background: rgba(255,255,255,0.62);
+}
+.bubble-h{
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(35,26,30,0.60);
+  margin-bottom: 6px;
+}
+.bubble-t{ color: rgba(35,26,30,0.84); white-space: pre-wrap; }
+
+/* Timeline */
+.timeline{ display:grid; gap: 12px; }
+.t-item{
+  display:flex; gap: 12px; align-items:flex-start;
+  padding: 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(189,115,133,0.14);
+  background: rgba(255,255,255,0.52);
+}
+.t-ic{
+  width: 44px; height: 44px;
+  border-radius: 16px;
+  display:grid; place-items:center;
+  background: rgba(189,115,133,0.16);
+  border: 1px solid rgba(189,115,133,0.16);
+  font-weight: 800;
+  color: rgba(35,26,30,0.78);
+}
+.t-title{ font-weight: 800; color: rgba(35,26,30,0.86); margin-bottom: 4px; }
+.t-text{ color: rgba(35,26,30,0.74); }
+
+.quote-strip{
+  display:flex; gap: 12px; align-items:center;
+  padding: 14px;
+  border-radius: 22px;
+  background: rgba(189,115,133,0.12);
+  border: 1px solid rgba(189,115,133,0.16);
+}
+.qs-logo{
+  width: 46px; height: 46px;
+  border-radius: 18px;
+  display:grid; place-items:center;
+  background: rgba(255,255,255,0.54);
+  border: 1px solid rgba(189,115,133,0.16);
+  box-shadow: var(--shadow2);
+}
+.qs-big{
+  font-family: DM Serif Display, serif;
+  font-weight: 650;
+  font-size: 18px;
+  color: rgba(35,26,30,0.84);
+}
+.qs-small{ font-size: 12px; color: rgba(35,26,30,0.66); margin-top: 2px; }
+
+.logos{ display:grid; gap: 10px; }
+.logo{
+  display:flex; gap: 12px; align-items:center;
+  padding: 12px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.54);
+  border: 1px solid rgba(189,115,133,0.14);
+}
+.logo-mark{
+  width: 42px; height: 42px;
+  border-radius: 16px;
+  display:grid; place-items:center;
+  background: rgba(189,115,133,0.14);
+  border: 1px solid rgba(189,115,133,0.16);
+  font-weight: 900;
+}
+.logo-h{ font-weight: 800; color: rgba(35,26,30,0.86); }
+.logo-s{ font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+.callout{
+  display:flex; gap: 12px; align-items:center;
+  padding: 14px;
+  border-radius: 22px;
+  background: rgba(255,255,255,0.56);
+  border: 1px solid rgba(189,115,133,0.16);
+}
+.callout-ic{
+  width: 44px; height: 44px;
+  border-radius: 18px;
+  display:grid; place-items:center;
+  background: rgba(189,115,133,0.14);
+  border: 1px solid rgba(189,115,133,0.16);
+}
+.callout-h{ font-weight: 800; color: rgba(35,26,30,0.86); }
+.callout-s{ font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+/* Footer */
+.footer{
+  display:flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+.footer-right{ text-align:right; }
+
+/* Modal */
+.modal{ position: fixed; inset: 0; display:none; z-index: 80; }
+.modal.is-open{ display:block; }
+.modal-backdrop{
+  position:absolute; inset:0;
+  background: rgba(20,10,14,0.28);
+  backdrop-filter: blur(6px);
+}
+.modal-panel{
+  position: relative;
+  width: min(860px, calc(100% - 36px));
+  margin: 54px auto;
+  border-radius: 24px;
+  background: rgba(255,255,255,0.80);
+  border: 1px solid rgba(189,115,133,0.18);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  animation: pop .22s var(--ease) both;
+}
+@keyframes pop{
+  from{ transform: translateY(10px); opacity: 0; }
+  to{ transform: translateY(0); opacity: 1; }
+}
+.modal-head{
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+  gap: 12px;
+  padding: 16px 16px 12px;
+  border-bottom: 1px solid rgba(189,115,133,0.16);
+}
+.modal-title{
+  font-family: DM Serif Display, serif;
+  font-weight: 650;
+  font-size: 20px;
+}
+.modal-sub{ font-size: 12px; color: var(--muted); margin-top: 2px; }
+.modal-body{ padding: 14px 16px 16px; }
+
+.playlist-controls{
+  display:grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 10px;
+  align-items: end;
+  margin-bottom: 12px;
+}
+.player{
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(189,115,133,0.18);
+  background: rgba(247,238,241,0.72);
+  box-shadow: var(--shadow2);
+}
+.player iframe{
+  width: 100%;
+  height: 420px;
+  border: 0;
+  display:block;
+}
+
+/* Toast */
+.toast{
+  position: fixed;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%);
+  padding: 10px 12px;
+  border-radius: 999px;
+  background: rgba(35,26,30,0.86);
+  color: white;
+  font-size: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .18s var(--ease), transform .18s var(--ease);
+  z-index: 90;
+}
+.toast.is-on{
+  opacity: 1;
+  transform: translateX(-50%) translateY(-4px);
+}
+
+/* Responsive */
+@media (max-width: 980px){
+  .sidebar{ width: 92px; padding: 22px 12px; }
+  .app{ margin-left: 92px; }
+  .brand-text, .nav-tx, .sidebar-foot .micro{ display:none; }
+  .brand{ justify-content:center; }
+  .nav-item{ justify-content:center; padding: 10px 10px; }
+  .nav-ic{ width: 42px; height: 42px; border-radius: 16px; }
+  .container{ padding-top: 84px; }
+  .hero{ grid-template-columns: 1fr; }
+  .hero-title-big{
+  display:block;
+  font-family: "DM Serif Display", serif;
+  font-weight: 400;
+  font-size: 58px;
+  letter-spacing: 0.5px;
+  color: var(--ink);
+}
+  .mini-row{ grid-template-columns: 1fr; }
+  .grid-2{ grid-template-columns: 1fr; }
+  .tiles{ grid-template-columns: repeat(2, 1fr); }
+  .form-grid{ grid-template-columns: 1fr; }
+  .playlist-controls{ grid-template-columns: 1fr; }
+  .player iframe{ height: 340px; }
+}
+
+@media (max-width: 520px){
+  .dock{ margin: 12px 12px 0; }
+  .dock-big{ font-size: 22px; }
+  body.is-docked .dock-big{ font-size: 17px; }
+  .hero-title-big{
+  display:block;
+  font-family: "DM Serif Display", serif;
+  font-weight: 400;
+  font-size: 58px;
+  letter-spacing: 0.5px;
+  color: var(--ink);
+}
+  .pair{ grid-template-columns: 1fr; }
+  .player iframe{ height: 280px; }
+}
+
+
+/* Home grid: single column after removing second card */
+.home-grid{ grid-template-columns: 1fr; }
+
+/* Subtle floral accents */
+.bg-texture{
+  background:
+    radial-gradient(circle at 12% 18%, rgba(189,115,133,0.10) 0 6px, transparent 7px),
+    radial-gradient(circle at 18% 24%, rgba(189,115,133,0.08) 0 3px, transparent 4px),
+    radial-gradient(circle at 82% 30%, rgba(215,161,174,0.10) 0 5px, transparent 6px),
+    radial-gradient(circle at 75% 78%, rgba(189,115,133,0.08) 0 4px, transparent 5px),
+    radial-gradient(circle at 30% 85%, rgba(215,161,174,0.08) 0 5px, transparent 6px);
+  opacity: .22;
+}
+
+
+/* Subtle floral pattern (tiny, low-contrast) */
+.bg-texture{
+  background:
+    radial-gradient(1px 1px at 10% 15%, rgba(35,26,30,0.12) 40%, transparent 60%),
+    radial-gradient(1px 1px at 70% 40%, rgba(35,26,30,0.10) 40%, transparent 60%),
+    radial-gradient(1px 1px at 25% 78%, rgba(35,26,30,0.09) 40%, transparent 60%),
+    radial-gradient(1px 1px at 85% 80%, rgba(35,26,30,0.08) 40%, transparent 60%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cg fill='none' stroke='%23bd7385' stroke-opacity='0.18' stroke-width='1.2'%3E%3Cpath d='M90 24c10 10 10 22 0 32-10-10-10-22 0-32Z'/%3E%3Cpath d='M90 24c-10 10-10 22 0 32 10-10 10-22 0-32Z'/%3E%3Cpath d='M56 90c10-10 22-10 32 0-10 10-22 10-32 0Z'/%3E%3Cpath d='M124 90c-10-10-22-10-32 0 10 10 22 10 32 0Z'/%3E%3Cpath d='M67 67c14 2 22 10 24 24-14-2-22-10-24-24Z'/%3E%3Cpath d='M113 113c-14-2-22-10-24-24 14 2 22 10 24 24Z'/%3E%3Cpath d='M113 67c-2 14-10 22-24 24 2-14 10-22 24-24Z'/%3E%3Cpath d='M67 113c2-14 10-22 24-24-2 14-10 22-24 24Z'/%3E%3Ccircle cx='90' cy='90' r='4' fill='%23bd7385' fill-opacity='0.14' stroke='none'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat;
+  background-size: auto, auto, auto, auto, 180px 180px;
+}
+
+
+===== script.js =====
+
+/* =========================================================
+   Kunjus Corner — script.js
+   - section navigation + transitions
+   - IST clock + Nov 10 birthday countdown (IST locked)
+   - tiny prompt shuffle + copy
+   - Boost quotes (tries internet API, fallback offline)
+   - Two-way notes (localStorage)
+   - YouTube playlist embed via playlist ID (localStorage)
+   ========================================================= */
+
+(() => {
+  "use strict";
+
+  // -----------------------------
+  // Helpers
+  // -----------------------------
+  const $ = (sel, root = document) => root.querySelector(sel);
+  const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
+
+  function toast(msg) {
+    const el = $("#toast");
+    el.textContent = msg;
+    el.classList.add("is-on");
+    clearTimeout(toast._t);
+    toast._t = setTimeout(() => el.classList.remove("is-on"), 1600);
+  }
+
+  async function copyToClipboard(text) {
+    try {
+      await navigator.clipboard.writeText(text);
+      toast("Copied ✓");
+    } catch {
+      // Fallback
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.position = "fixed";
+      ta.style.left = "-9999px";
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand("copy");
+      ta.remove();
+      toast("Copied ✓");
+    }
+  }
+
+  // -----------------------------
+  // Navigation (always visible)
+  // -----------------------------
+  const sections = $$("[data-section]");
+  const navItems = $$(".nav-item");
+
+  function showSection(id) {
+    sections.forEach(s => s.classList.toggle("is-active", s.id === id));
+    navItems.forEach(b => b.classList.toggle("is-active", b.dataset.target === id));
+    // Update aria-current
+    navItems.forEach(b => b.removeAttribute("aria-current"));
+    const active = navItems.find(b => b.dataset.target === id);
+    if (active) active.setAttribute("aria-current", "page");
+    // Close modal if open
+    closeModal();
+    // Tiny scroll reset for nicer feel
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  navItems.forEach(btn => {
+    btn.addEventListener("click", () => showSection(btn.dataset.target));
+  });
+
+  $$("[data-jump]").forEach(btn => {
+    btn.addEventListener("click", () => showSection(btn.dataset.jump));
+  });
+
+  // -----------------------------
+  // “Dock” effect: big name shrinks on scroll
+  // -----------------------------
+  const dockThreshold = 72;
+  function updateDock() {
+    document.body.classList.toggle("is-docked", window.scrollY > dockThreshold);
+  }
+  window.addEventListener("scroll", updateDock, { passive: true });
+  updateDock();
+
+  // -----------------------------
+  // Photo fallback if nandana.png missing
+  // -----------------------------
+  const photo = $("#nandanaPhoto");
+  const fallback = $("#photoFallback");
+  function ensurePhoto() {
+    if (!photo) return;
+    // If image fails, show fallback
+    photo.addEventListener("error", () => {
+      photo.style.display = "none";
+      fallback.classList.add("is-on");
+    }, { once: true });
+  }
+  ensurePhoto();
+
+  // -----------------------------
+  // IST time helpers (timezone-locked)
+  // -----------------------------
+  const IST_TZ = "Asia/Kolkata";
+
+  function nowInISTDateObject() {
+    // Creates a Date object representing current IST time, regardless of local TZ.
+    // Uses locale string conversion as a practical approach.
+    return new Date(new Date().toLocaleString("en-US", { timeZone: IST_TZ }));
+  }
+
+  function formatTimeHHMM(dateObj) {
+    // dateObj assumed in IST "representation"
+    const hh = String(dateObj.getHours()).padStart(2, "0");
+    const mm = String(dateObj.getMinutes()).padStart(2, "0");
+    return `${hh}:${mm}`;
+  }
+
+  // IST clock in sidebar
+  const istClock = $("#istClock");
+  function tickISTClock() {
+    const nowIST = nowInISTDateObject();
+    if (istClock) istClock.textContent = `IST • ${formatTimeHHMM(nowIST)}`;
+  }
+  tickISTClock();
+  setInterval(tickISTClock, 15_000);
+
+  // -----------------------------
+  // Birthday countdown to Nov 10 (IST)
+  // Target: Nov 10, 00:00:00 IST of next occurrence.
+  // -----------------------------
+  const cdDays = $("#cdDays");
+  const cdHours = $("#cdHours");
+  const cdMins = $("#cdMins");
+  const cdSecs = $("#cdSecs");
+  const daysToMini = $("#daysToBdayMini");
+
+  function getNextBirthdayTargetIST() {
+    const nowIST = nowInISTDateObject();
+    const year = nowIST.getFullYear();
+
+    // Build target in IST with explicit offset (+05:30)
+    let target = new Date(`${year}-11-10T00:00:00+05:30`);
+    if (target.getTime() <= Date.now()) {
+      target = new Date(`${year + 1}-11-10T00:00:00+05:30`);
+    }
+    return target;
+  }
+
+  let birthdayTarget = getNextBirthdayTargetIST();
+
+  function updateBirthdayCountdown() {
+    // Ensure target stays correct when year rolls
+    const next = getNextBirthdayTargetIST();
+    if (next.getTime() !== birthdayTarget.getTime()) birthdayTarget = next;
+
+    const diff = birthdayTarget.getTime() - Date.now();
+    const total = Math.max(0, diff);
+
+    const secs = Math.floor(total / 1000);
+    const days = Math.floor(secs / 86400);
+    const hours = Math.floor((secs % 86400) / 3600);
+    const mins = Math.floor((secs % 3600) / 60);
+    const s = secs % 60;
+
+    if (cdDays) cdDays.textContent = String(days);
+    if (cdHours) cdHours.textContent = String(hours).padStart(2, "0");
+    if (cdMins) cdMins.textContent = String(mins).padStart(2, "0");
+    if (cdSecs) cdSecs.textContent = String(s).padStart(2, "0");
+    if (daysToMini) daysToMini.textContent = String(days);
+  }
+
+  updateBirthdayCountdown();
+  setInterval(updateBirthdayCountdown, 1000);
+
+  // -----------------------------
+  // Tiny prompt widget (Home)
+  // -----------------------------
+  const prompts = [
+    "“You’re allowed to take up space.”",
+    "“Pick one thing. Do it properly.”",
+    "“Consistency beats intensity (yes, even at the gym).”",
+    "“Small progress counts. Don’t bully yourself.”",
+    "“Drink water. Then decide.”",
+    "“Do it in 10 minutes. Perfect later.”",
+    "“Your future self likes clean schedules.”",
+    "“Be kind. Be sharp. Be unstoppable.”",
+    "“You don’t need permission to be proud.”",
+    "“No overthinking today—just one step.”",
+    "“If it’s worth doing, it’s worth doing calmly.”"
+  ];
+
+  const missions = [
+    "Do one small thing with full focus.",
+    "Stretch for 3 minutes. Your body will forgive you.",
+    "Reply to one message you’ve been postponing.",
+    "Clean one tiny area (one drawer counts).",
+    "Plan tomorrow’s top 2 tasks. Stop there.",
+    "Walk for 8 minutes. No headphones. Just air."
+  ];
+
+  const promptText = $("#promptText");
+  const tinyMission = $("#tinyMission");
+  const newPromptBtn = $("#newPromptBtn");
+  const copyPromptBtn = $("#copyPromptBtn");
+
+  function randomFrom(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+  }
+
+  function setPrompt() {
+    if (promptText) promptText.textContent = randomFrom(prompts);
+    if (tinyMission) tinyMission.textContent = randomFrom(missions);
+  }
+
+  if (newPromptBtn) newPromptBtn.addEventListener("click", () => {
+    // micro animation
+    promptText?.classList.add("fade-pop");
+    setTimeout(() => promptText?.classList.remove("fade-pop"), 220);
+    setPrompt();
+  });
+
+  if (copyPromptBtn) copyPromptBtn.addEventListener("click", () => {
+    if (!promptText) return;
+    copyToClipboard(promptText.textContent.trim());
+  });
+
+  setPrompt();
+
+  // Add a tiny CSS class via JS for micro animation (keeps CSS clean)
+  const style = document.createElement("style");
+  style.textContent = `
+    .fade-pop{ animation: fadePop .22s ease both; }
+    @keyframes fadePop{ from{ opacity:.35; transform: translateY(6px); } to{ opacity:1; transform: translateY(0);} }
+  `;
+  document.head.appendChild(style);
+
+  // -----------------------------
+  // Boost quotes (internet + fallback)
+  // Uses https://api.quotable.io/random?tags=... (CORS-friendly in most browsers)
+  // If it fails (offline/local restrictions), fallback list is used.
+  // -----------------------------
+  const quoteBox = $("#quoteBox");
+  const quoteText = $("#quoteText");
+  const quoteMeta = $("#quoteMeta");
+  const newQuoteBtn = $("#newQuoteBtn");
+  const copyQuoteBtn = $("#copyQuoteBtn");
+
+  const offlineQuotes = [
+    { q: "Discipline is just kindness to your future self.", a: "offline set" },
+    { q: "Focus on what you can control. Let the rest be background noise.", a: "offline set" },
+    { q: "Start before you feel ready.", a: "offline set" },
+    { q: "You don’t need a new plan. You need a clean next step.", a: "offline set" },
+    { q: "Make it simple. Make it repeatable.", a: "offline set" },
+    { q: "Done is better than perfect, and calm is better than rushed.", a: "offline set" },
+    { q: "Your confidence grows every time you keep a promise to yourself.", a: "offline set" }
+  ];
+
+  async function fetchInternetQuote() {
+    // Avoid romantic tags; focus on general motivation/productivity.
+    const url = "https://api.quotable.io/random?tags=motivational|inspirational|success|wisdom|famous-quotes";
+    const res = await fetch(url, { cache: "no-store" });
+    if (!res.ok) throw new Error("quote fetch failed");
+    const data = await res.json();
+    return { q: data.content, a: data.author || "Unknown", src: "Quotable" };
+  }
+
+  function setQuote(q, a, sourceLabel) {
+    if (!quoteBox || !quoteText || !quoteMeta) return;
+    quoteBox.classList.add("is-changing");
+    setTimeout(() => {
+      quoteText.textContent = q;
+      quoteMeta.textContent = `— ${a}${sourceLabel ? ` • ${sourceLabel}` : ""}`;
+      quoteBox.classList.remove("is-changing");
+    }, 180);
+  }
+
+  async function newQuote() {
+    try {
+      const it = await fetchInternetQuote();
+      setQuote(it.q, it.a, it.src);
+    } catch {
+      const pick = randomFrom(offlineQuotes);
+      setQuote(pick.q, pick.a, "");
+    }
+  }
+
+  if (newQuoteBtn) newQuoteBtn.addEventListener("click", newQuote);
+  if (copyQuoteBtn) copyQuoteBtn.addEventListener("click", () => {
+    const txt = `${quoteText?.textContent || ""} ${quoteMeta?.textContent || ""}`.trim();
+    if (txt) copyToClipboard(txt);
+  });
+
+  newQuote();
+
+  // -----------------------------
+  // Countdown list (custom) — localStorage
+  // -----------------------------
+  const LS_COUNTDOWNS = "kunjus_countdowns_v1";
+
+  const newCdName = $("#newCdName");
+  const newCdDate = $("#newCdDate");
+  const addCountdownBtn = $("#addCountdownBtn");
+  const countdownList = $("#countdownList");
+  const clearCountdownsBtn = $("#clearCountdownsBtn");
+
+  function loadCountdowns() {
+    try {
+      return JSON.parse(localStorage.getItem(LS_COUNTDOWNS) || "[]");
+    } catch {
+      return [];
+    }
+  }
+
+  function saveCountdowns(items) {
+    localStorage.setItem(LS_COUNTDOWNS, JSON.stringify(items));
+  }
+
+  function parseDateToISTTarget(dateStr) {
+    // dateStr: YYYY-MM-DD
+    // Set target at 00:00 IST for that date
+    return new Date(`${dateStr}T00:00:00+05:30`);
+  }
+
+  function formatRemaining(ms) {
+    const secs = Math.max(0, Math.floor(ms / 1000));
+    const d = Math.floor(secs / 86400);
+    const h = Math.floor((secs % 86400) / 3600);
+    const m = Math.floor((secs % 3600) / 60);
+    return `${d}d ${String(h).padStart(2,"0")}h ${String(m).padStart(2,"0")}m`;
+  }
+
+  function renderCountdowns() {
+    if (!countdownList) return;
+    const items = loadCountdowns();
+
+    if (!items.length) {
+      countdownList.innerHTML = `<div class="micro-note">No saved countdowns yet. Add one above.</div>`;
+      return;
+    }
+
+    countdownList.innerHTML = items.map(item => {
+      return `
+        <div class="cd-item" data-id="${item.id}">
+          <div>
+            <div class="cd-name">${escapeHTML(item.name)}</div>
+            <div class="cd-sub">${escapeHTML(item.date)} • IST midnight</div>
+          </div>
+          <div class="cd-right">
+            <div class="cd-time" data-remaining>—</div>
+            <button class="btn btn-mini btn-mini-ghost cd-del" type="button" data-del>Delete</button>
+          </div>
+        </div>
+      `;
+    }).join("");
+
+    // Bind delete buttons
+    $$("[data-del]", countdownList).forEach(btn => {
+      btn.addEventListener("click", (e) => {
+        const row = e.currentTarget.closest(".cd-item");
+        const id = row?.dataset.id;
+        const next = loadCountdowns().filter(x => x.id !== id);
+        saveCountdowns(next);
+        renderCountdowns();
+        toast("Countdown deleted");
+      });
+    });
+
+    // initial tick
+    tickCustomCountdowns();
+  }
+
+  function tickCustomCountdowns() {
+    if (!countdownList) return;
+    const items = loadCountdowns();
+    const map = new Map(items.map(i => [i.id, parseDateToISTTarget(i.date)]));
+    $$(".cd-item", countdownList).forEach(row => {
+      const id = row.dataset.id;
+      const target = map.get(id);
+      const remEl = $("[data-remaining]", row);
+      if (!target || !remEl) return;
+      const diff = target.getTime() - Date.now();
+      remEl.textContent = diff <= 0 ? "done ✓" : formatRemaining(diff);
+    });
+  }
+
+  if (addCountdownBtn) addCountdownBtn.addEventListener("click", () => {
+    const name = (newCdName?.value || "").trim();
+    const date = (newCdDate?.value || "").trim();
+
+    if (!name) return toast("Please enter an event name");
+    if (!date) return toast("Please pick a date");
+
+    const items = loadCountdowns();
+    items.unshift({ id: cryptoRandomId(), name, date, createdAt: Date.now() });
+    saveCountdowns(items);
+
+    newCdName.value = "";
+    newCdDate.value = "";
+    renderCountdowns();
+    toast("Countdown added");
+  });
+
+  if (clearCountdownsBtn) clearCountdownsBtn.addEventListener("click", () => {
+    localStorage.removeItem(LS_COUNTDOWNS);
+    renderCountdowns();
+    toast("Saved countdowns cleared");
+  });
+
+  renderCountdowns();
+  setInterval(tickCustomCountdowns, 30_000);
+
+  // -----------------------------
+  // Notes — localStorage (two-way linked)
+  // -----------------------------
+  const LS_NOTES = "kunjus_notes_v1";
+
+  const segBtns = $$(".seg-btn");
+  const primaryLabel = $("#primaryLabel");
+  const replyLabel = $("#replyLabel");
+  const primaryNote = $("#primaryNote");
+  const replyNote = $("#replyNote");
+  const addNoteBtn = $("#addNoteBtn");
+  const clearNotesBtn = $("#clearNotesBtn");
+  const notesList = $("#notesList");
+  const notesCount = $("#notesCount");
+
+  let currentAuthor = "kunjus"; // default
+
+  function loadNotes() {
+    try {
+      return JSON.parse(localStorage.getItem(LS_NOTES) || "[]");
+    } catch {
+      return [];
+    }
+  }
+  function saveNotes(items) {
+    localStorage.setItem(LS_NOTES, JSON.stringify(items));
+  }
+
+  function setAuthor(author) {
+    currentAuthor = author;
+    segBtns.forEach(b => b.classList.toggle("is-active", b.dataset.author === author));
+    if (author === "kunjus") {
+      primaryLabel.textContent = "Kunjus note";
+      replyLabel.textContent = "My reply (optional)";
+      primaryNote.placeholder = "Type something small & real…";
+      replyNote.placeholder = "Add a reply to link it… (optional)";
+    } else {
+      primaryLabel.textContent = "My note";
+      replyLabel.textContent = "Kunjus reply (optional)";
+      primaryNote.placeholder = "Drop a note for her…";
+      replyNote.placeholder = "Her reply (optional)";
+    }
+  }
+
+  segBtns.forEach(b => b.addEventListener("click", () => setAuthor(b.dataset.author)));
+  setAuthor("kunjus");
+
+  function renderNotes() {
+    if (!notesList || !notesCount) return;
+    const items = loadNotes();
+    notesCount.textContent = String(items.length);
+
+    if (!items.length) {
+      notesList.innerHTML = `<div class="micro-note">No notes yet. Add one on the left.</div>`;
+      return;
+    }
+
+    notesList.innerHTML = items.map(n => {
+      const time = new Date(n.createdAt).toLocaleString("en-IN", { timeZone: IST_TZ, day: "2-digit", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" });
+      const leftIsKunjus = (n.author === "kunjus");
+      const leftTitle = leftIsKunjus ? "Kunjus" : "Me";
+      const rightTitle = leftIsKunjus ? "Me" : "Kunjus";
+
+      const leftText = escapeHTML(n.text || "");
+      const rightText = escapeHTML(n.reply || "");
+
+      return `
+        <div class="note" data-id="${n.id}">
+          <div class="note-top">
+            <div class="note-time">${time} • IST</div>
+            <button class="btn btn-mini btn-mini-ghost note-del" type="button" data-note-del>Delete</button>
+          </div>
+
+          <div class="pair">
+            <div class="bubble ${leftIsKunjus ? "" : "me"}">
+              <div class="bubble-h">${leftTitle}</div>
+              <div class="bubble-t">${leftText || "<span style='opacity:.55'>—</span>"}</div>
+            </div>
+            <div class="bubble ${leftIsKunjus ? "me" : ""}">
+              <div class="bubble-h">${rightTitle}</div>
+              <div class="bubble-t">${rightText || "<span style='opacity:.55'>—</span>"}</div>
+            </div>
+          </div>
+        </div>
+      `;
+    }).join("");
+
+    $$("[data-note-del]", notesList).forEach(btn => {
+      btn.addEventListener("click", (e) => {
+        const row = e.currentTarget.closest(".note");
+        const id = row?.dataset.id;
+        const next = loadNotes().filter(x => x.id !== id);
+        saveNotes(next);
+        renderNotes();
+        toast("Note deleted");
+      });
+    });
+  }
+
+  if (addNoteBtn) addNoteBtn.addEventListener("click", () => {
+    const text = (primaryNote?.value || "").trim();
+    const reply = (replyNote?.value || "").trim();
+
+    if (!text) return toast("Write something first");
+
+    const items = loadNotes();
+    items.unshift({
+      id: cryptoRandomId(),
+      author: currentAuthor,
+      text,
+      reply,
+      createdAt: Date.now()
+    });
+    saveNotes(items);
+
+    primaryNote.value = "";
+    replyNote.value = "";
+    renderNotes();
+    toast("Note added");
+  });
+
+  if (clearNotesBtn) clearNotesBtn.addEventListener("click", () => {
+    localStorage.removeItem(LS_NOTES);
+    renderNotes();
+    toast("All notes cleared");
+  });
+
+  renderNotes();
+
+  // -----------------------------
+  // Playlist modal + localStorage
+  // -----------------------------
+  const LS_PLAYLIST = "kunjus_playlist_v1";
+  const openPlaylistBtn = $("#openPlaylistBtn");
+  const playlistModal = $("#playlistModal");
+  const playlistInput = $("#playlistInput");
+  const savePlaylistBtn = $("#savePlaylistBtn");
+  const resetPlaylistBtn = $("#resetPlaylistBtn");
+  const ytFrame = $("#ytFrame");
+
+  const DEFAULT_PLAYLIST_ID = "PLFgquLnL59alCl_2TQvOiD5Vgm1hCaGSI"; // You can replace later
+
+  function extractPlaylistId(str) {
+    const s = (str || "").trim();
+    if (!s) return "";
+    // If direct ID
+    if (/^PL[a-zA-Z0-9_-]{10,}$/.test(s)) return s;
+    // If URL with list=
+    const m = s.match(/[?&]list=([a-zA-Z0-9_-]+)/);
+    if (m) return m[1];
+    return s; // last resort
+  }
+
+  function setIframePlaylist(id) {
+    if (!ytFrame) return;
+    const safeId = encodeURIComponent(id);
+    // Clean embed URL
+    ytFrame.src = `https://www.youtube-nocookie.com/embed/videoseries?list=${safeId}`;
+  }
+
+  function loadPlaylistId() {
+    return localStorage.getItem(LS_PLAYLIST) || DEFAULT_PLAYLIST_ID;
+  }
+
+  function savePlaylistId(id) {
+    localStorage.setItem(LS_PLAYLIST, id);
+  }
+
+  function openModal() {
+    if (!playlistModal) return;
+    playlistModal.classList.add("is-open");
+    playlistModal.setAttribute("aria-hidden", "false");
+  }
+  function closeModal() {
+    if (!playlistModal) return;
+    playlistModal.classList.remove("is-open");
+    playlistModal.setAttribute("aria-hidden", "true");
+  }
+
+  if (openPlaylistBtn) openPlaylistBtn.addEventListener("click", () => {
+    const id = loadPlaylistId();
+    if (playlistInput) playlistInput.value = id;
+    setIframePlaylist(id);
+    openModal();
+  });
+
+  if (playlistModal) {
+    playlistModal.addEventListener("click", (e) => {
+      const t = e.target;
+      if (t && t.hasAttribute("data-close")) closeModal();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && playlistModal.classList.contains("is-open")) closeModal();
+    });
+  }
+
+  if (savePlaylistBtn) savePlaylistBtn.addEventListener("click", () => {
+    const raw = playlistInput?.value || "";
+    const id = extractPlaylistId(raw);
+    if (!id) return toast("Enter a playlist ID or URL");
+    savePlaylistId(id);
+    setIframePlaylist(id);
+    toast("Playlist saved");
+  });
+
+  if (resetPlaylistBtn) resetPlaylistBtn.addEventListener("click", () => {
+    savePlaylistId(DEFAULT_PLAYLIST_ID);
+    if (playlistInput) playlistInput.value = DEFAULT_PLAYLIST_ID;
+    setIframePlaylist(DEFAULT_PLAYLIST_ID);
+    toast("Playlist reset");
+  });
+
+  // -----------------------------
+  // Year in footer
+  // -----------------------------
+  const yearNow = $("#yearNow");
+  if (yearNow) yearNow.textContent = String(new Date().getFullYear());
+
+  // -----------------------------
+  // Utility
+  // -----------------------------
+  function escapeHTML(str) {
+    return String(str)
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+  }
+
+  function cryptoRandomId() {
+    // Prefer crypto for uniqueness, fallback to timestamp.
+    try {
+      const a = new Uint8Array(8);
+      crypto.getRandomValues(a);
+      return [...a].map(x => x.toString(16).padStart(2, "0")).join("");
+    } catch {
+      return String(Date.now()) + "_" + Math.random().toString(16).slice(2);
+    }
+  }
+
+})();
